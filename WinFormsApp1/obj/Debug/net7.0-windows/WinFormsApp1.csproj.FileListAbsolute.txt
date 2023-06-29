@@ -1,0 +1,17 @@
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\bin\Debug\net7.0-windows\WinFormsApp1.exe
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\bin\Debug\net7.0-windows\WinFormsApp1.deps.json
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\bin\Debug\net7.0-windows\WinFormsApp1.runtimeconfig.json
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\bin\Debug\net7.0-windows\WinFormsApp1.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\bin\Debug\net7.0-windows\WinFormsApp1.pdb
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.Form1.resources
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.AssemblyInfo.cs
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\refint\WinFormsApp1.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.pdb
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.genruntimeconfig.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\WinFormsApp1\obj\Debug\net7.0-windows\ref\WinFormsApp1.dll

@@ -48,5 +48,18 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer.nNeuronLayerItems
                 Value = MathHelper.Sigmoid(__Sum + __BiasSum);
             }
         }
+
+        /*public void CalculateValue()
+        {
+            if (Inputs.Count > 0)
+            {
+                List<cNeuronConnection> __WeightSynapses = Inputs.Where(__Item => __Item.StartNeuron.NeuronType.ID == NeuronTypes.NormalNeuron.ID).ToList();
+                List<cNeuronConnection> __BiasSynapseWeight = Inputs.Where(__Item => __Item.StartNeuron.NeuronType.ID == NeuronTypes.BiasNeuron.ID).ToList();
+
+                double __Sum = __WeightSynapses.Sum(__Item => __Item.StartNeuronWeight);
+                double __BiasSum = __BiasSynapseWeight.Sum(__Item => __Item.StartNeuronWeight);
+                Value = __Sum + __BiasSum;
+            }
+        }*/
     }
 }

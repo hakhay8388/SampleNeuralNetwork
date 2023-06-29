@@ -24,7 +24,7 @@ class Program
 
             double __Distance = GetDistance(__X, __Y, 250f, 250f);
 
-            var inputs = new[] { __X / 500, __Y / 500 };
+            var inputs = new[] { __X / 500 , __Y / 500 };
 
             NeuronLayerManager.SetInputValues(inputs);
             NeuronLayerManager.FeedForward();
@@ -61,7 +61,7 @@ class Program
 
     static void Train()
     {
-        for (var __EpochIndex = 0; __EpochIndex < 5000; __EpochIndex++)
+        for (var __EpochIndex = 0; __EpochIndex < 500; __EpochIndex++)
         {
             List<cTrainingData<double[], double[]>> __TrainingDataSet = GetTrainingData();
 
@@ -122,7 +122,7 @@ class Program
         NeuronLayerManager.AddLayer(2);
         NeuronLayerManager.AddLayer(6);
         NeuronLayerManager.AddLayer(6);
-        //NeuronLayerManager.AddLayer(8, true);
+        NeuronLayerManager.AddLayer(6);
         //NeuronLayerManager.AddLayer(4, false);
         //NeuronLayerManager.AddLayer(12, true);
         NeuronLayerManager.AddLayer(2);

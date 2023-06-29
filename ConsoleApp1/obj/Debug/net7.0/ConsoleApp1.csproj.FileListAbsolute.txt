@@ -1,0 +1,15 @@
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.exe
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.deps.json
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.runtimeconfig.json
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.pdb
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.AssemblyReference.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfoInputs.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfo.cs
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\refint\ConsoleApp1.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.pdb
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.genruntimeconfig.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\ConsoleApp1\obj\Debug\net7.0\ref\ConsoleApp1.dll

@@ -28,7 +28,7 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager
             if (NeuronLayers.Count > 0)
             {
                 cNeuronLayer __LastNeuronLayer = NeuronLayers.Last();
-                __LastNeuronLayer.CreateNeurons(NeuronTypes.BiasNeuron, 3);
+                __LastNeuronLayer.CreateNeurons(NeuronTypes.BiasNeuron, 1);
                 __LastNeuronLayer.FullConnectToLayer(__NeuronLayer);
             }
 
