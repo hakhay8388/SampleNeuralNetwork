@@ -1,0 +1,15 @@
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\bin\Debug\net7.0\MyNeuralNetwork.exe
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\bin\Debug\net7.0\MyNeuralNetwork.deps.json
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\bin\Debug\net7.0\MyNeuralNetwork.runtimeconfig.json
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\bin\Debug\net7.0\MyNeuralNetwork.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\bin\Debug\net7.0\MyNeuralNetwork.pdb
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.csproj.AssemblyReference.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.GeneratedMSBuildEditorConfig.editorconfig
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.AssemblyInfoInputs.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.AssemblyInfo.cs
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.csproj.CoreCompileInputs.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\refint\MyNeuralNetwork.dll
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.pdb
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\MyNeuralNetwork.genruntimeconfig.cache
+H:\VirtualStyle_Projects\MyNeuralNetwork\MyNeuralNetwork\obj\Debug\net7.0\ref\MyNeuralNetwork.dll
