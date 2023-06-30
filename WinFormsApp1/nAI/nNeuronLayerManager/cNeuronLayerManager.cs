@@ -50,41 +50,28 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager
             return NeuronLayers.Last();
         }
 
-
-      /*  public void PasiveConnection()
+        /*public void ResetActivation()
         {
-            cNeuronLayer __Layers = NeuronLayers.Where(__Item => __Item.IsHidden).ToList().First();
-            PasiveConnectionInner(__Layers);
+            for (int i = 0; i < NeuronLayers.Count; i++)
+            {
+                if (!NeuronLayers[i].IsInputLayer)
+                {
+                    NeuronLayers[i].ResetActivation();
+                }
+            }
         }
 
-        public void PasiveConnectionInner(cNeuronLayer _Layer)
+        public void DropOut()
         {
-            for (int i = 0; i < _Layer.Neurons.Count; i++)
+            for (int i = 0; i < NeuronLayers.Count; i++)
             {
-                cNeuronConnection __Connection = null;
-                for (int j = 0; j < _Layer.Neurons[i].Outputs.Count; j++)
+                if (!NeuronLayers[i].IsInputLayer)
                 {
-                    if (j == 0)
-                    {
-                        __Connection = _Layer.Neurons[i].Outputs[j];
-                    }
-                    else if (__Connection.EndNeuronErrorWeight < _Layer.Neurons[i].Outputs[j].EndNeuronErrorWeight)
-                    {
-                        __Connection = _Layer.Neurons[i].Outputs[j];
-                    }
-                }
-
-                if (_Layer.Neurons[i].Outputs.Where(__Item => __Item.IsEnabled).Count() > 3 && __Connection != null)
-                {
-                    __Connection.IsEnabled = false;
-                }
-            }
-
-            if (!_Layer.NextLayer.IsOutLayer)
-            {
-                PasiveConnectionInner(_Layer.NextLayer);
+                    NeuronLayers[i].DropOut();
+                }                
             }
         }*/
+
 
         public void SetInputValues(double[] _Inputs)
         {
@@ -104,10 +91,10 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager
             }
         }
 
-        public void FeedForward()
+        public void FeedForward(bool _Visible)
         {
             cNeuronLayer __NeuronLayer = NeuronLayers.First();
-            __NeuronLayer.CalculateNeuronValues();
+            __NeuronLayer.CalculateNeuronValues(_Visible);
         }
 
         public double CalculateError(double[] _Targets)
@@ -122,13 +109,7 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager
         {
             cNeuronLayer __OutputLayer = NeuronLayers.Last();
             __OutputLayer.BackPropagate(_LearningRate);
-        }
-
-        /* public void ReduceBias(double _Error)
-         {
-             cNeuronLayer __NeuronLayer = NeuronLayers.First();
-             __NeuronLayer.ReduceBias(_Error);
-         }*/
+        }             
 
     }
 }

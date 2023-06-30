@@ -7,6 +7,7 @@ public class cAI
 {
     public Control OwnerItem { get; set; }
     cNeuronLayerManager NeuronLayerManager { get; set; }
+
     public cAI(Control _OwnerItem)
     {
         OwnerItem = _OwnerItem;
@@ -33,7 +34,7 @@ public class cAI
             var inputs = new[] { __X / 500, __Y / 500 };
 
             NeuronLayerManager.SetInputValues(inputs);
-            NeuronLayerManager.FeedForward();
+            NeuronLayerManager.FeedForward(false);
             cNeuronLayer __NeuronLayer = NeuronLayerManager.GetOutputLayer();
             double __PredictDistance = __NeuronLayer.Neurons.First().Value;
             double __PredictIn = __NeuronLayer.Neurons.Last().Value;
@@ -65,8 +66,50 @@ public class cAI
         Console.WriteLine($"False: {__False}");
     }
 
+    public void SingleTest()
+    {
+
+        Random __Random = new Random();
+
+        int __True = 0;
+        int __False = 0;
+
+        double __X = __Random.Next(500);
+        double __Y = __Random.Next(500);
+
+        double __Distance = GetDistance(__X, __Y, 250f, 250f);
+
+        var inputs = new[] { __X / 500, __Y / 500 };
+
+        NeuronLayerManager.SetInputValues(inputs);
+        NeuronLayerManager.FeedForward(true);
+        cNeuronLayer __NeuronLayer = NeuronLayerManager.GetOutputLayer();
+        double __PredictDistance = __NeuronLayer.Neurons.First().Value;
+        double __PredictIn = __NeuronLayer.Neurons.Last().Value;
+        var absoluteResponse = __PredictIn > 0.5 ? 1 : 0;
+
+        Console.WriteLine($"RealDistance: {__Distance} : PredictDistance: {__PredictDistance * 500} , In Circle : {absoluteResponse}");
+
+     
+        if ((__Distance <= 200 && absoluteResponse > 0.5) ||
+            __Distance > 200 && absoluteResponse < 0.5)
+        {
+            __True++;
+        }
+        else
+        {
+            __False++;
+        }
+
+
+        Console.WriteLine($"True: {__True}");
+        Console.WriteLine($"False: {__False}");
+    }
+
     public void Train()
     {
+      
+        
         for (var __EpochIndex = 0; __EpochIndex < 200; __EpochIndex++)
         {
             List<cTrainingData<double[], double[]>> __TrainingDataSet = GetTrainingData();
@@ -75,17 +118,19 @@ public class cAI
             foreach (var __TrainingData in __TrainingDataSet)
             {
                 NeuronLayerManager.SetInputValues(__TrainingData.Data);
-                NeuronLayerManager.FeedForward();
-                double __Error = NeuronLayerManager.CalculateError( __TrainingData.Targets );
+                NeuronLayerManager.FeedForward(false);
+                double __Error = NeuronLayerManager.CalculateError(__TrainingData.Targets);
                 __Errors.Add(__Error);
-                NeuronLayerManager.BackPropagate(0.1);
+                NeuronLayerManager.BackPropagate(1.0d / Math.Pow(10 , (NeuronLayerManager.NeuronLayers.Count - 2)));
+                //NeuronLayerManager.BackPropagate(0.1);
             }
 
             var __AverageError = __Errors.Sum() / __Errors.Count;
-            //NeuronLayerManager.PasiveConnection();
 
-            //NeuronLayerManager.ReduceBias(__AverageError);
-
+            if (__AverageError < 0.1)
+            {
+                break;
+            }
 
             Console.WriteLine(__AverageError);
         }
@@ -127,11 +172,15 @@ public class cAI
     }
 
 
-     void CreateLayers()
+    void CreateLayers()
     {
         NeuronLayerManager.AddLayer(2);
-        NeuronLayerManager.AddLayer(8);
-        //NeuronLayerManager.AddLayer(8);
+        NeuronLayerManager.AddLayer(4);
+        //NeuronLayerManager.AddLayer(12);
+        //NeuronLayerManager.AddLayer(12);
+        //NeuronLayerManager.AddLayer(12);
+        //        NeuronLayerManager.AddLayer(6);
+        //NeuronLayerManager.AddLayer(3);
         //NeuronLayerManager.AddLayer(4);
         //NeuronLayerManager.AddLayer(6);
         //NeuronLayerManager.AddLayer(4, false);

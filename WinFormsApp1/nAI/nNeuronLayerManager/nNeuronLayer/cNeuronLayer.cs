@@ -16,6 +16,13 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer
         public bool IsHidden { get { return !IsInputLayer && !IsOutLayer; } }
         public cNeuronLayerManager NeuronLayerManager { get; set; }
         public List<cBaseNeuron> Neurons { get; set; }
+
+        public cBaseNeuron BiaseNeuron { 
+            get
+            {
+                return Neurons.Where(__Item => __Item.NeuronType.ID == NeuronTypes.BiasNeuron.ID).First();
+            }
+        }
         public cNeuronLayer(cNeuronLayerManager _NeuronLayerManager)
         {
             Neurons = new List<cBaseNeuron>();
@@ -49,6 +56,8 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer
             }
         }
 
+
+
         public void CreateNeurons(NeuronTypes _NeuronTypes, int _Count)
         {
             Random m_Random = new Random();
@@ -77,15 +86,15 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer
             }
         }
 
-        public void CalculateNeuronValues()
+        public void CalculateNeuronValues(bool _Visible)
         {
             for (int i = 0; i < Neurons.Count; i++)
             {
-                Neurons[i].CalculateValue();
+                Neurons[i].CalculateValue(_Visible);
             }
             if (NextLayer != null)
             {
-                NextLayer.CalculateNeuronValues();
+                NextLayer.CalculateNeuronValues(_Visible);
             }
         }
 
@@ -110,8 +119,6 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer
                     for (int j = 0; j < Neurons[i].Outputs.Count; j++)
                     {
                         Neurons[i].Error += Neurons[i].Outputs[j].EndNeuronErrorWeight;
-
-                        //__Result += Math.Abs(Neurons[i].Error);
                     }
                 }
             }
@@ -122,33 +129,10 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer
             }
             else
             {
-                return __Result + PreviousLayer.CalculateNeuronError(_Targets); 
+                return __Result + PreviousLayer.CalculateNeuronError(_Targets);
             }
         }
 
-       /* public void ReduceBias(double _Error)
-        {
-            List<cBaseNeuron> __BiasNeuros = Neurons.Where(__Item => __Item.NeuronType.ID == NeuronTypes.BiasNeuron.ID).ToList();
-            for (int i = 0; i < __BiasNeuros.Count; i++)
-            {
-                double __Result = __BiasNeuros[i].Outputs.Sum(__Item => __Item.EndNeuron.Error) / 2;
-                if (__Result < 0)
-                {
-                    __Result = 0;
-                }
-                else if (__Result > 1)
-                {
-                    __Result = 1;
-                }
-
-                __BiasNeuros[i].Value = __Result;
-            }
-
-            if (!IsOutLayer)
-            {
-                NextLayer.ReduceBias(_Error);
-            }
-        }*/
 
         public void BackPropagate(double _LearningRate)
         {
@@ -162,6 +146,7 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer
 
                 //__Neuron.Inputs.RemoveAll(__Item => __Item.IsDeletable);
             }
+
 
             if (PreviousLayer != null)
             {

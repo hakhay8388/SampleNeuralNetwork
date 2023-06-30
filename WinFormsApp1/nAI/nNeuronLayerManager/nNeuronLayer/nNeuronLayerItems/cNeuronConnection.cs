@@ -12,14 +12,12 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer.nNeuronLayerItems
         public cBaseNeuron StartNeuron { get; set; }
         public cBaseNeuron EndNeuron { get; set; }
 
-        public bool IsEnabled { get; set; }
 
         public cNeuronConnection(cBaseNeuron _StartNeuron, cBaseNeuron _EndNeuron, double _Weight)
         {
             StartNeuron = _StartNeuron;
             EndNeuron = _EndNeuron;
             Weight = _Weight;
-            IsEnabled = true;
             Init();
         }
 

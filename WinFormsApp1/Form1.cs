@@ -22,5 +22,11 @@ namespace WinFormsApp1
         {
             AI.Test();
         }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AI.SingleTest();
+        }
     }
 }

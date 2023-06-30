@@ -15,6 +15,7 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer.nNeuronLayerItems
 
         public double Error { get; set; }
 
+
         public List<cNeuronConnection> Inputs { get; set; }
 
         public List<cNeuronConnection> Outputs { get; set; }
@@ -37,10 +38,10 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer.nNeuronLayerItems
             OwnerNeuronLayer.NeuronLayerManager.AI.OwnerItem.Controls.Add(ValueProgressBar);
 
             ErrorLabel = new Label();
-            ErrorLabel.Size = new Size(150, 20);
+            ErrorLabel.Size = new Size(250, 20);
             ErrorLabel.Location = new Point(__Point.X, __Point.Y + 20);
             ErrorLabel.Name = Guid.NewGuid().ToString();
-            OwnerNeuronLayer.NeuronLayerManager.AI.OwnerItem.Controls.Add(ErrorLabel); 
+            OwnerNeuronLayer.NeuronLayerManager.AI.OwnerItem.Controls.Add(ErrorLabel);
         }
 
         public Point GetLocation()
@@ -79,25 +80,25 @@ namespace MyNeuralNetwork.nAI.nNeuronLayerManager.nNeuronLayer.nNeuronLayerItems
             }
         }
 
-        public void RefreshValue()
+        public void RefreshValue(bool _Visible)
         {
             ValueProgressBar.Value = (int)(Value * 100);
-            //ErrorLabel.Text = Error.ToString(); 
+            if (_Visible) ErrorLabel.Text = NeuronType.Name + " : " + Error.ToString();
             Application.DoEvents();
         }
 
-        public void CalculateValue()
+        public void CalculateValue(bool _Visible)
         {
             if (Inputs.Count > 0)
             {
-                List<cNeuronConnection> __WeightSynapses = Inputs.Where(__Item => __Item.StartNeuron.NeuronType.ID == NeuronTypes.NormalNeuron.ID && __Item.IsEnabled).ToList();
+                List<cNeuronConnection> __WeightSynapses = Inputs.Where(__Item => __Item.StartNeuron.NeuronType.ID == NeuronTypes.NormalNeuron.ID).ToList();
                 List<cNeuronConnection> __BiasSynapseWeight = Inputs.Where(__Item => __Item.StartNeuron.NeuronType.ID == NeuronTypes.BiasNeuron.ID).ToList();
 
                 double __Sum = __WeightSynapses.Sum(__Item => __Item.StartNeuronWeight);
                 double __BiasSum = __BiasSynapseWeight.Sum(__Item => __Item.StartNeuronWeight);
                 Value = MathHelper.Sigmoid(__Sum + __BiasSum);
             }
-            RefreshValue();
+            RefreshValue(_Visible);
         }
 
 
